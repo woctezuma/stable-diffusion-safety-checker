@@ -8,23 +8,36 @@ def get_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--data_dir",
+        "--data-dir",
+        "--data",
         type=str,
         default="images",
         help="The path to the input folder where images are stored.",
     )
-    parser.add_argument("--batch_size", type=int, default=256, help="Batch size.")
+    parser.add_argument(
+        "--batch_size",
+        "--batch-size",
+        "--batch",
+        type=int,
+        default=256,
+        help="Batch size.",
+    )
     parser.add_argument(
         "--resize_size",
+        "--resize-size",
+        "--resize",
         type=int,
         default=256,
         help="Desired image output size after the resize.",
     )
     parser.add_argument(
         "--keep_ratio",
+        "--keep-ratio",
         action="store_true",
         help="Whether to keep the image ratio: the smallest image side will match `resize_size`.",
     )
     parser.add_argument(
+        "-o",
         "--output",
         type=str,
         default="bad_concepts.json",
