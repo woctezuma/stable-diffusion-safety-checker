@@ -33,10 +33,12 @@ def apply_workflow(img_loader, batch_size, verbose=True):
             )
 
             aggregate += bad_concepts
-            scores += bad_concepts_scores
+            scores.append(bad_concepts_scores)
             sample_fnames += [
                 img_loader.dataset.samples[ii * batch_size + jj]
                 for jj in range(len(bad_concepts))
             ]
+
+    scores = torch.concat(scores, dim=0)
 
     return aggregate, scores, sample_fnames

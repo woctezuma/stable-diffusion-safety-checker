@@ -62,6 +62,10 @@ def detect_bad_concepts(model, clip_input):
         result.append(result_img)
 
     bad_concepts = [res["bad_concepts"] for res in result]
-    bad_concepts_scores = [v for res in result for v in res["concept_scores"].values()]
+
+    bad_concepts_scores = [
+        torch.array(list(res["concept_scores"].values())) for res in result
+    ]
+    bad_concepts_scores = torch.concat(bad_concepts_scores, dim=0)
 
     return bad_concepts, bad_concepts_scores
