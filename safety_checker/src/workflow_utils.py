@@ -22,7 +22,7 @@ def apply_workflow(img_loader, batch_size, verbose=True):
     sample_fnames = []
 
     with torch.no_grad():
-        for ii, imgs in enumerate(tqdm.tqdm(img_loader)):
+        for ii, imgs in enumerate(tqdm(img_loader)):
             if verbose:
                 print(f"\nExtraction of batch n°{ii}.\n")
             clip_input = torch.tensor(np.array(processor(imgs).pixel_values)).to(device)
