@@ -53,6 +53,8 @@ with Path("bad_concepts.json").open(encoding='utf8') as f:
   results = json.load(f)
 ```
 
+The IDs of the "bad concepts" are clarified on [this page][bad-concepts] hosted by LAION-AI.
+
 ## References
 
 - [`feature-extractor`][feature-extractor]: similar code to extract image features,
@@ -64,6 +66,7 @@ with Path("bad_concepts.json").open(encoding='utf8') as f:
 [huggingface-stable-diffusion]: <https://huggingface.co/CompVis/stable-diffusion>
 
 [python-download-url]: <https://www.python.org/downloads/>
+[bad-concepts]: <https://github.com/LAION-AI/CLIP-based-NSFW-Detector/blob/main/safety_settings.yml>
 
 [feature-extractor]: <https://github.com/woctezuma/feature-extractor>
 [data-discord]: <https://github.com/woctezuma/discord-members-metadata>
