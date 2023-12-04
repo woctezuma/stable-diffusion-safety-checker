@@ -7,9 +7,11 @@ import argparse
 def get_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "-i",
         "--data_dir",
         "--data-dir",
         "--data",
+        "--input",
         type=str,
         default="img",
         help="The path to the input folder where images are stored.",
