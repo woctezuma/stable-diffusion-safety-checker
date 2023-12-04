@@ -23,7 +23,7 @@ def main():
     )
 
     print(">>> Detecting bad concepts...")
-    aggregate, sample_fnames = apply_workflow(
+    aggregate, scores, sample_fnames = apply_workflow(
         img_loader,
         params.batch_size,
         verbose=params.verbose,

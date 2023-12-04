@@ -19,6 +19,7 @@ def apply_workflow(img_loader, batch_size, verbose=True):
     safety_checker_model = get_safety_checker_model()
 
     aggregate = []
+    scores = []
     sample_fnames = []
 
     with torch.no_grad():
@@ -32,9 +33,10 @@ def apply_workflow(img_loader, batch_size, verbose=True):
             )
 
             aggregate += bad_concepts
+            scores += bad_concepts_scores
             sample_fnames += [
                 img_loader.dataset.samples[ii * batch_size + jj]
                 for jj in range(len(bad_concepts))
             ]
 
-    return aggregate, sample_fnames
+    return aggregate, scores, sample_fnames
