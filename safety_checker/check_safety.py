@@ -42,6 +42,10 @@ def main():
     print(">>> Saving scores for bad concepts...")
     torch.save(torch.asarray(scores, dtype=torch.float16), params.output_scores)
 
+    print(">>> Saving image paths...")
+    with Path(params.img_list).open("w") as f:
+        json.dump(sample_fnames, f)
+
 
 if __name__ == "__main__":
     main()
