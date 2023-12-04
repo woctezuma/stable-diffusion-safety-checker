@@ -35,7 +35,7 @@ def main():
         output[fname] = bad_concepts
 
     with Path(params.output).open("w") as f:
-        json.dump(output, f, indent=True, sort_keys=True)
+        json.dump(output, f, indent=True)
 
 
 if __name__ == "__main__":
