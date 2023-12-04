@@ -42,6 +42,17 @@ Run the script:
  --verbose
 ```
 
+Check the results:
+
+```python
+import json
+
+from pathlib import Path
+
+with Path("bad_concepts.json").open(encoding='utf8') as f:
+  results = json.load(f)
+```
+
 <!-- Definitions -->
 
 [huggingface-safety-checker]: <https://huggingface.co/CompVis/stable-diffusion-safety-checker>
