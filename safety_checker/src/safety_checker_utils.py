@@ -61,4 +61,7 @@ def detect_bad_concepts(model, clip_input):
 
         result.append(result_img)
 
-    return [res["bad_concepts"] for res in result]
+    bad_concepts = [res["bad_concepts"] for res in result]
+    bad_concepts_scores = [v for res in result for v in res["concept_scores"].values()]
+
+    return bad_concepts, bad_concepts_scores

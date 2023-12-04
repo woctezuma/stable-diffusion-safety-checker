@@ -26,7 +26,10 @@ def apply_workflow(img_loader, batch_size, verbose=True):
             if verbose:
                 print(f"\nExtraction of batch n°{ii}.\n")
             clip_input = torch.tensor(np.array(processor(imgs).pixel_values)).to(device)
-            bad_concepts = detect_bad_concepts(safety_checker_model, clip_input)
+            bad_concepts, bad_concepts_scores = detect_bad_concepts(
+                safety_checker_model,
+                clip_input,
+            )
 
             aggregate += bad_concepts
             sample_fnames += [
