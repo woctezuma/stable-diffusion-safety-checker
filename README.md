@@ -8,7 +8,7 @@ The goal of this repository is to run the [safety checker][huggingface-safety-ch
 - Install the required packages:
 
 ```bash
-pip install -r requirements.txt
+!pip install git+https://github.com/woctezuma/stable-diffusion-safety-checker.git
 ```
 
 ## Usage
