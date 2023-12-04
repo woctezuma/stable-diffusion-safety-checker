@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from safety_checker.src.dataloader_utils import get_dataloader
+from safety_checker.src.dataloader_utils import collate_fn, get_dataloader
 from safety_checker.src.parser_utils import get_parser
 from safety_checker.src.transform_utils import get_transform
 from safety_checker.src.workflow_utils import apply_workflow
@@ -19,7 +19,7 @@ def main():
         params.data_dir,
         get_transform(params.resize_size, params.keep_ratio),
         batch_size=params.batch_size,
-        collate_fn=None,
+        collate_fn=collate_fn if params.keep_ratio else None,
     )
 
     print(">>> Detecting bad concepts...")
