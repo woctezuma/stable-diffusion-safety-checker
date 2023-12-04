@@ -13,8 +13,26 @@ The goal of this repository is to run the [safety checker][huggingface-safety-ch
 
 ## Usage
 
--   Run [`safety_checker.ipynb`][colab-notebook-safety-checker].
+- Run the main script with:
+
+```bash
+!python -m safety_checker.check_safety -h
+```
+
+- Alternatively, run [`safety_checker.ipynb`][colab-notebook-safety-checker].
 [![Open In Colab][colab-badge]][colab-notebook-safety-checker]
+
+## Example
+
+```bash
+fname = "balloon_dataset.zip"
+!curl -OL https://github.com/matterport/Mask_RCNN/releases/download/v2.1/{fname}
+!unzip -q {fname}
+```
+
+```bash
+!python -m safety_checker.check_safety --data balloon
+```
 
 <!-- Definitions -->
 
