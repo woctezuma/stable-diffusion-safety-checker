@@ -24,14 +24,22 @@ The goal of this repository is to run the [safety checker][huggingface-safety-ch
 
 ## Example
 
+Download the `balloon` image dataset.
 ```bash
 fname = "balloon_dataset.zip"
 !curl -OL https://github.com/matterport/Mask_RCNN/releases/download/v2.1/{fname}
 !unzip -q {fname}
 ```
 
+Run the script:
 ```bash
-!python -m safety_checker.check_safety --data balloon
+!python -m safety_checker.check_safety \
+ --input balloon \
+ --batch 8 \
+ --resize 256 \
+ --keep-ratio \
+ --output bad_concepts.json \
+ --verbose
 ```
 
 <!-- Definitions -->
