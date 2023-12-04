@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import torch
+
 from safety_checker.src.dataloader_utils import collate_fn, get_dataloader
 from safety_checker.src.parser_utils import get_parser
 from safety_checker.src.transform_utils import get_transform
@@ -36,6 +38,9 @@ def main():
 
     with Path(params.output).open("w") as f:
         json.dump(output, f, indent=True)
+
+    print(">>> Saving scores for bad concepts...")
+    torch.save(torch.asarray(scores, dtype=torch.float16), params.output_scores)
 
 
 if __name__ == "__main__":
