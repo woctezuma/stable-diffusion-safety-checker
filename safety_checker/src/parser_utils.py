@@ -11,7 +11,7 @@ def get_parser():
         "--data-dir",
         "--data",
         type=str,
-        default="images",
+        default="img",
         help="The path to the input folder where images are stored.",
     )
     parser.add_argument(
