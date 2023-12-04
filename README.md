@@ -53,12 +53,20 @@ with Path("bad_concepts.json").open(encoding='utf8') as f:
   results = json.load(f)
 ```
 
+## References
+
+- [`feature-extractor`][feature-extractor]: similar code to extract image features,
+- [`discord-members-metadata`][data-discord]: profiles pictures scraped from a specific Discord guild's members.
+
 <!-- Definitions -->
 
 [huggingface-safety-checker]: <https://huggingface.co/CompVis/stable-diffusion-safety-checker>
 [huggingface-stable-diffusion]: <https://huggingface.co/CompVis/stable-diffusion>
 
 [python-download-url]: <https://www.python.org/downloads/>
+
+[feature-extractor]: <https://github.com/woctezuma/feature-extractor>
+[data-discord]: <https://github.com/woctezuma/discord-members-metadata>
 
 [colab-notebook-safety-checker]: <https://colab.research.google.com/github/woctezuma/stable-diffusion-safety-checker/blob/main/safety_checker.ipynb>
 [colab-badge]: <https://colab.research.google.com/assets/colab-badge.svg>
