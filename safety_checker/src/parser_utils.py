@@ -46,6 +46,24 @@ def get_parser():
         help="An output file with a list of IDs of bad concepts detected in each image.",
     )
     parser.add_argument(
+        "--output_scores",
+        "--output-scores",
+        "--scores",
+        type=str,
+        default="bad_concepts_scores.pth",
+        help="An output file with the scores for the bad concepts in PyTorch format.",
+    )
+    parser.add_argument(
+        "--img_list",
+        "--img-list",
+        "--output_list",
+        "--output-list",
+        "--list",
+        type=str,
+        default="img_list.json",
+        help="An output file with the list of image paths in the order used by the data loader.",
+    )
+    parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
