@@ -1,5 +1,6 @@
-from src.image_folder import ImageFolder
 from torch.utils.data import DataLoader
+
+from safety_checker.src.image_folder import ImageFolder
 
 # Reference:
 # https://github.com/woctezuma/feature-extractor/blob/minimal/src/dataloader_utils.py

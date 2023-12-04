@@ -1,10 +1,10 @@
 import json
 from pathlib import Path
 
-from src.dataloader_utils import get_dataloader
-from src.parser_utils import get_parser
-from src.transform_utils import get_transform
-from src.workflow_utils import apply_workflow
+from safety_checker.src.dataloader_utils import get_dataloader
+from safety_checker.src.parser_utils import get_parser
+from safety_checker.src.transform_utils import get_transform
+from safety_checker.src.workflow_utils import apply_workflow
 
 # Reference:
 # https://github.com/woctezuma/feature-extractor/blob/minimal/extract_fts.py

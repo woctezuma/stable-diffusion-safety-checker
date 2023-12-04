@@ -1,12 +1,13 @@
 import numpy as np
 import torch
-from src.device_utils import get_device
-from src.safety_checker_model import (
+from tqdm.auto import tqdm
+
+from safety_checker.src.device_utils import get_device
+from safety_checker.src.safety_checker_model import (
     get_safety_checker_model,
     get_safety_checker_processor,
 )
-from src.safety_checker_utils import detect_bad_concepts
-from tqdm.auto import tqdm
+from safety_checker.src.safety_checker_utils import detect_bad_concepts
 
 # Reference:
 # https://github.com/woctezuma/feature-extractor/blob/minimal/src/feature_utils.py

@@ -2,8 +2,9 @@ import torch
 from diffusers.pipelines.stable_diffusion.safety_checker import (
     StableDiffusionSafetyChecker,
 )
-from src.device_utils import get_device
 from transformers import AutoFeatureExtractor
+
+from safety_checker.src.device_utils import get_device
 
 MODEL_NAME = "CompVis/stable-diffusion-safety-checker"
 
