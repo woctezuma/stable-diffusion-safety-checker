@@ -66,6 +66,6 @@ def detect_bad_concepts(model, clip_input):
     bad_concepts_scores = [
         torch.asarray(list(res["concept_scores"].values())) for res in result
     ]
-    bad_concepts_scores = torch.concat(bad_concepts_scores, dim=0)
+    bad_concepts_scores = torch.vstack(bad_concepts_scores)
 
     return bad_concepts, bad_concepts_scores
