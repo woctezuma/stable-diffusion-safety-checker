@@ -39,6 +39,8 @@ Run the script:
  --resize 256 \
  --keep-ratio \
  --output bad_concepts.json \
+ --scores bad_concepts_scores.pth \
+ --list img_list.json \
  --verbose
 ```
 
