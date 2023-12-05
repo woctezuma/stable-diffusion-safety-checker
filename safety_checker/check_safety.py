@@ -44,7 +44,7 @@ def main():
 
     print(">>> Saving image paths...")
     with Path(params.img_list).open("w") as f:
-        json.dump(sample_fnames, f)
+        json.dump(sample_fnames, f, indent=True)
 
 
 if __name__ == "__main__":
