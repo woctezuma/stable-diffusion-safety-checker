@@ -3,7 +3,7 @@ default_stages: [commit, manual]
 repos:
 
 -   repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.6
+    rev: v0.4.5
     hooks:
     - id: ruff
       args: [
@@ -17,7 +17,7 @@ repos:
     - id: ruff-format
 
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
     - id: trailing-whitespace
       args: [--markdown-linebreak-ext=md]
@@ -26,14 +26,14 @@ repos:
 
 
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.7.1
+    rev: v1.10.0
     hooks:
     - id: mypy
       additional_dependencies: [types-requests]
       stages: [manual]
 
 -   repo: https://github.com/dosisod/refurb
-    rev: v1.24.0
+    rev: v2.0.0
     hooks:
     - id: refurb
       args: [--python-version, "3.12"]
