@@ -5,7 +5,9 @@ from torchvision import transforms
 
 
 def get_target_image_size(
-    resize_size: int = 256, *, keep_ratio: bool = True
+    resize_size: int = 256,
+    *,
+    keep_ratio: bool = True,
 ) -> int | tuple[int]:
     return resize_size if keep_ratio else (resize_size, resize_size)
 
