@@ -13,7 +13,7 @@ from safety_checker.src.safety_checker_utils import detect_bad_concepts
 # https://github.com/woctezuma/feature-extractor/blob/minimal/src/feature_utils.py
 
 
-def apply_workflow(img_loader, batch_size, verbose=True):
+def apply_workflow(img_loader, batch_size: int, *, verbose: bool = True):
     device = get_device()
     processor = get_safety_checker_processor()
     safety_checker_model = get_safety_checker_model()

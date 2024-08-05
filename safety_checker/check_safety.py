@@ -12,7 +12,7 @@ from safety_checker.src.workflow_utils import apply_workflow
 # https://github.com/woctezuma/feature-extractor/blob/minimal/extract_fts.py
 
 
-def main():
+def main() -> None:
     params = get_parser().parse_args()
     print(f"__log__:{json.dumps(vars(params))}")
 
@@ -34,14 +34,14 @@ def main():
     print(">>> Saving image paths and bad concepts...")
     output = dict(zip(sample_fnames, aggregate, strict=True))
 
-    with Path(params.output).open("w") as f:
+    with Path(params.output).open("w", encoding="utf-8") as f:
         json.dump(output, f, indent=True)
 
     print(">>> Saving scores for bad concepts...")
     torch.save(torch.asarray(scores, dtype=torch.float16), params.output_scores)
 
     print(">>> Saving image paths...")
-    with Path(params.img_list).open("w") as f:
+    with Path(params.img_list).open("w", encoding="utf-8") as f:
         json.dump(sample_fnames, f, indent=True)
 
 

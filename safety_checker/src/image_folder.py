@@ -25,7 +25,7 @@ def get_image_paths(path):
 class ImageFolder:
     """An image folder dataset without classes"""
 
-    def __init__(self, path, transform=None, loader=default_loader):
+    def __init__(self, path, transform=None, loader=default_loader) -> None:
         self.samples = get_image_paths(path)
         self.loader = loader
         self.transform = transform
@@ -37,5 +37,5 @@ class ImageFolder:
             return self.transform(img)
         return img
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.samples)
