@@ -32,9 +32,7 @@ def main():
     )
 
     print(">>> Saving image paths and bad concepts...")
-    output = {}
-    for fname, bad_concepts in zip(sample_fnames, aggregate, strict=True):
-        output[fname] = bad_concepts
+    output = dict(zip(sample_fnames, aggregate, strict=True))
 
     with Path(params.output).open("w") as f:
         json.dump(output, f, indent=True)
