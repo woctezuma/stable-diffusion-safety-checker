@@ -4,6 +4,7 @@ build-backend = "pdm.backend"
 
 [project]
 name = "safety_checker"
+version = 0.1
 dependencies = [
     "Pillow",
     "diffusers",
