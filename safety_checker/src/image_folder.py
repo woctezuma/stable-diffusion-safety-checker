@@ -15,7 +15,8 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 @functools.lru_cache
 def get_image_paths(path):
     message = f"Resolving files in: {path}"
-    logging.info(message)
+    logger = logging.getLogger(__name__)
+    logger.info(message)
     paths = []
     for _dirpath, _dirnames, filenames in os.walk(path):
         paths.extend([str(Path(_dirpath) / filename) for filename in filenames])
