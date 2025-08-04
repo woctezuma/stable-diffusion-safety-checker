@@ -10,7 +10,7 @@ repos:
       --fix,
       --unsafe-fixes,
       --exit-non-zero-on-fix,
-      --target-version, "py313",
+      --target-version, "py314",
       --select, "ALL",
       --ignore, "ANN,C90,D,E501,FBT,PLR091,S101,S113,T20,CPY,DOC"
       ]
